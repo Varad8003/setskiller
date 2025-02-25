@@ -11,6 +11,8 @@ import EmployeeLogin from "./pages/employee/Login";
 import RecruiterLogin from "./pages/recruiter/Login";
 import EmployeeLayout from "./components/layouts/EmployeeLayout";
 import EmployeeDashboard from "./pages/employee/Dashboard";
+import RecruiterLayout from "./components/layouts/RecruiterLayout";
+import RecruiterDashboard from "./pages/recruiter/Dashboard";
 
 const queryClient = new QueryClient();
 
@@ -27,6 +29,9 @@ const App = () => (
             <Route path="/recruiter/login" element={<RecruiterLogin />} />
             <Route path="/employee" element={<EmployeeLayout />}>
               <Route path="dashboard" element={<EmployeeDashboard />} />
+            </Route>
+            <Route path="/recruiter" element={<RecruiterLayout />}>
+              <Route path="dashboard" element={<RecruiterDashboard />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
