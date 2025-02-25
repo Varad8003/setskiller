@@ -8,9 +8,9 @@ import { Briefcase, GraduationCap } from "lucide-react";
 
 const Index = () => {
   const navigate = useNavigate();
-  const [selectedRole, setSelectedRole] = useState<string | null>(null);
+  const [selectedRole, setSelectedRole] = useState(null);
 
-  const handleRoleSelect = (role: string) => {
+  const handleRoleSelect = (role) => {
     setSelectedRole(role);
     setTimeout(() => {
       navigate(`/${role.toLowerCase()}/login`);
