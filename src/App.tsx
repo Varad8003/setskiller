@@ -13,11 +13,11 @@ import RecruiterLogin from "./pages/recruiter/Login";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
+  <BrowserRouter>
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
         <AnimatePresence mode="wait">
           <Routes>
             <Route path="/" element={<Index />} />
@@ -26,9 +26,9 @@ const App = () => (
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </BrowserRouter>
 );
 
 export default App;
