@@ -9,6 +9,8 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import EmployeeLogin from "./pages/employee/Login";
 import RecruiterLogin from "./pages/recruiter/Login";
+import EmployeeLayout from "./components/layouts/EmployeeLayout";
+import EmployeeDashboard from "./pages/employee/Dashboard";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +25,9 @@ const App = () => (
             <Route path="/" element={<Index />} />
             <Route path="/employee/login" element={<EmployeeLogin />} />
             <Route path="/recruiter/login" element={<RecruiterLogin />} />
+            <Route path="/employee" element={<EmployeeLayout />}>
+              <Route path="dashboard" element={<EmployeeDashboard />} />
+            </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
