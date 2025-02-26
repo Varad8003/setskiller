@@ -13,6 +13,7 @@ import RecruiterLogin from "./pages/recruiter/Login";
 import RecruiterSignup from "./pages/recruiter/Signup";
 import EmployeeLayout from "./components/layouts/EmployeeLayout";
 import EmployeeDashboard from "./pages/employee/Dashboard";
+import EmployeeProfile from "./pages/employee/Profile";
 import RecruiterLayout from "./components/layouts/RecruiterLayout";
 import RecruiterDashboard from "./pages/recruiter/Dashboard";
 
@@ -33,6 +34,7 @@ const App = () => (
             <Route path="/recruiter/signup" element={<RecruiterSignup />} />
             <Route path="/employee" element={<EmployeeLayout />}>
               <Route path="dashboard" element={<EmployeeDashboard />} />
+              <Route path="profile" element={<EmployeeProfile />} />
             </Route>
             <Route path="/recruiter" element={<RecruiterLayout />}>
               <Route path="dashboard" element={<RecruiterDashboard />} />
