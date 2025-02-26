@@ -44,6 +44,7 @@ const Dashboard = () => {
     },
   ];
 
+ 
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -58,9 +59,11 @@ const Dashboard = () => {
           </p>
         </div>
         <div className="flex gap-4">
-          <Button>
+          <Button  >
+            
             <PlusCircle className="mr-2 h-4 w-4" />
             Post New Job
+            
           </Button>
         </div>
       </div>

@@ -50,9 +50,9 @@ const RecruiterLogin = () => {
             <Button className="w-full">Sign In</Button>
           </form>
           <div className="mt-4 text-center text-sm">
-            <a href="#" className="text-primary hover:underline">
+            <Link to='/recruiter/signup' className="text-primary hover:underline">
               Don't have an account? Sign up
-            </a>
+            </Link>
           </div>
         </Card>
       </motion.div>

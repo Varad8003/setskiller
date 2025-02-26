@@ -50,9 +50,12 @@ const EmployeeLogin = () => {
             <Button className="w-full">Sign In</Button>
           </form>
           <div className="mt-4 text-center text-sm">
-            <a href="#" className="text-primary hover:underline">
+            {/* <a href="#" className="text-primary hover:underline" onClick={} >
               Don't have an account? Sign up
-            </a>
+            </a> */}
+            <Link to="/employee/signup" className="text-primary hover:underline">
+              Don't have an account? Sign up
+            </Link>
           </div>
         </Card>
       </motion.div>

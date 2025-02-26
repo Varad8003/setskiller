@@ -31,6 +31,25 @@ const Index = () => {
         </div>
       </nav>
 
+{/* 
+      <nav className="p-4 flex justify-end">
+  <div className="space-x-4">
+    <Button variant="outline" asChild>
+      <Link to="/employee/login">Employee Login</Link>
+    </Button>
+    <Button asChild>
+      <Link to="/recruiter/login">Recruiter Login</Link>
+    </Button>
+    <Button asChild>
+      <Link to="/employee/signup">Employee Signup</Link>
+    </Button>
+    <Button asChild>
+      <Link to="/recruiter/signup">Recruiter Signup</Link>
+    </Button>
+  </div>
+</nav> */}
+
+
       {/* Main Content */}
       <div className="flex-1 flex flex-col items-center justify-center p-4">
         <motion.div
