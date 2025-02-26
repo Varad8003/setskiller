@@ -8,7 +8,9 @@ import { AnimatePresence } from "framer-motion";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import EmployeeLogin from "./pages/employee/Login";
+import EmployeeSignup from "./pages/employee/Signup";
 import RecruiterLogin from "./pages/recruiter/Login";
+import RecruiterSignup from "./pages/recruiter/Signup";
 import EmployeeLayout from "./components/layouts/EmployeeLayout";
 import EmployeeDashboard from "./pages/employee/Dashboard";
 import RecruiterLayout from "./components/layouts/RecruiterLayout";
@@ -26,7 +28,9 @@ const App = () => (
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/employee/login" element={<EmployeeLogin />} />
+            <Route path="/employee/signup" element={<EmployeeSignup />} />
             <Route path="/recruiter/login" element={<RecruiterLogin />} />
+            <Route path="/recruiter/signup" element={<RecruiterSignup />} />
             <Route path="/employee" element={<EmployeeLayout />}>
               <Route path="dashboard" element={<EmployeeDashboard />} />
             </Route>
