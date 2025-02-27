@@ -8,6 +8,13 @@ import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const EmployeeSignup = () => {
+
+  const handleClick = (e) => {
+    // Add code here to handle form submission
+    e.preventDefault();
+    console.log(e.name);
+  };
+ 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-background to-secondary/20 p-4">
       <motion.div
@@ -56,7 +63,7 @@ const EmployeeSignup = () => {
                 required
               />
             </div>
-            <Button className="w-full">Sign Up</Button>
+            <Button className="w-full" onSubmit={handleClick}>Sign Up</Button>
           </form>
           <div className="mt-4 text-center text-sm">
             <Link to="/employee/login" className="text-primary hover:underline">
