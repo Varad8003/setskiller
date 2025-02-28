@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 🚀 Project
 
 Welcome to your Project! This README will give you on  full information about the project efficiently.
@@ -30,3 +31,6 @@ All changes made via the web editor are automatically committed to the repositor
 
 Happy coding! 🎉
 
+=======
+# setskiller
+>>>>>>> 7e61247ecb9cd95bb517cc8ee105562098b097e3
