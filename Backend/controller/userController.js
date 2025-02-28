@@ -32,3 +32,10 @@ export const loginUser = async (req, res) => {
         res.status(500).json({ message: "Login failed", error });
     }
 };
+export const uploadResume=async(req,res)=>{
+    try {
+        
+    } catch (error) {
+        
+    }
+}
