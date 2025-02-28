@@ -5,9 +5,46 @@ import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ArrowLeft } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
+const VITE_BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 const RecruiterSignup = () => {
+
+  const navigate  = useNavigate();
+
+  const [formData , setFormData] = useState({
+    name:"",
+    email:"",
+    password:"",
+    companyName:"",
+  })
+  
+  const [error,setError] = useState(null);
+
+  const handleChange = (e) => {
+    setFormData({...formData,[e.target.id]:e.target.value})
+  };
+
+  const handleSubmit = async(e) => {
+    e.preventDefault();
+    setError(null);
+    try {
+      const response = await axios.post(`${VITE_BACKEND_URL}/api/recruiter/register`,formData);
+      if(response.status === 200 || response.status === 201){
+        navigate('/recruiter/dashboard');
+      }else{
+        setError('Invalid credentials');
+      }
+    } catch(err){
+      setError(err.response?.data?.message || "An error occured");
+    }
+  }
+
+
+
+
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-b from-background to-secondary/20 p-4">
       <motion.div
@@ -28,7 +65,7 @@ const RecruiterSignup = () => {
           <h2 className="text-2xl font-semibold text-center mb-6">
             Create Recruiter Account
           </h2>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             <div className="space-y-2">
               <Label htmlFor="name">Full Name</Label>
               <Input
@@ -36,14 +73,18 @@ const RecruiterSignup = () => {
                 placeholder="Enter your full name"
                 type="text"
                 required
+                value={formData.name}
+                onChange={handleChange}
               />
             </div>
             <div className="space-y-2">
               <Label htmlFor="company">Company Name</Label>
               <Input
-                id="company"
+                id="companyName"
                 placeholder="Enter your company name"
                 type="text"
+                value={formData.companyName}
+                onChange={handleChange}
                 required
               />
             </div>
@@ -53,6 +94,8 @@ const RecruiterSignup = () => {
                 id="email"
                 placeholder="Enter your email"
                 type="email"
+                value={formData.email}
+                onChange={handleChange}
                 required
               />
             </div>
@@ -62,10 +105,12 @@ const RecruiterSignup = () => {
                 id="password"
                 placeholder="Create a password"
                 type="password"
+                value={formData.password}
+                onChange={handleChange}
                 required
               />
             </div>
-            <Button className="w-full">Sign Up</Button>
+            <Button className="w-full" type="submit">Sign Up</Button>
           </form>
           <div className="mt-4 text-center text-sm">
             <Link to="/recruiter/login" className="text-primary hover:underline">
